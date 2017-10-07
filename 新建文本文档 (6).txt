@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = [0.]
+t = [0.]
+v = 40
+dt = 0
+x.append(float(input("please input the x:")))
+t.append(float(input("please input the t:"))) 
+dt=float(input("plaese input the dt:"))
+time=float(input("please input the time:"))
+n=int(time/dt)
+for i in range(1,n-1):
+    x.append(x[i]+v*dt)
+    t.append(dt*(i+1))
+
+ 
+plt.figure(figsize=(1,1))
+plt.plot(t,x,label="x(t)",color="red",linewidth=1)
+
+plt.xlabel("t(s)")
+
+plt.ylabel("x(m)")
+
+plt.legend()
+
+plt.show()
